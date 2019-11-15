@@ -1,0 +1,76 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-success">
+                      <h4 class="card-title">Inquiry</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form [formGroup]="formGroup">
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Fist Name" formControlName="firstName" type="text">
+                                   <mat-error class="error-message" *ngIf="formGroup.get('firstName').hasError('required') && (formGroup.get('firstName').dirty || formGroup.get('firstName').touched)">Please provide the First Name</mat-error>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Last Name" formControlName="lastName" type="text">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Phone" type="text" formControlName=phoneNumber maxlength="10">
+                                    <mat-error class="error-message" *ngIf="formGroup.get('phoneNumber').hasError('pattern') && (formGroup.get('phoneNumber').dirty || formGroup.get('phoneNumber').touched)">Please provide a valid Phone Number</mat-error>
+                                    <mat-error class="error-message" *ngIf="formGroup.get('phoneNumber').hasError('required') && (formGroup.get('phoneNumber').dirty || formGroup.get('phoneNumber').touched)">Please provide the Phone Number</mat-error>
+                                  </mat-form-field>
+                                </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Adress" type="text" formControlName="address">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email" type="text" formControlName="email">
+                                    <mat-error class="error-message" *ngIf="formGroup.get('email').hasError('pattern') && (formGroup.get('email').dirty || formGroup.get('email').touched)">Please provide a valid Email</mat-error>
+                                    <mat-error class="error-message" *ngIf="formGroup.get('email').hasError('required') && (formGroup.get('email').dirty || formGroup.get('email').touched)">Please provide the Email </mat-error>
+                                  </mat-form-field>
+                                </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Country" type="text" formControlName="country">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <label>About You</label>
+                                <mat-form-field class="example-full-width">
+                                   <textarea matInput placeholder="want to know about your goals and intrests." formControlName="aboutme"></textarea>
+                                 </mat-form-field>
+                                  <!-- <div class="form-group">
+
+                                      <div class="form-group">
+                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                          <textarea class="form-control" rows="5"></textarea>
+                                      </div>
+                                  </div> -->
+                              </div>
+                          </div>
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="save()">Submit</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

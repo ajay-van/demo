@@ -1,0 +1,13 @@
+<h1 mat-dialog-title >Hi {{data?.firstName}} {{data?.lastName}}</h1>
+<div mat-dialog-content>
+  <p> Inquiry Submitted.Thanks for your time</p>
+  <div class="card-icon">
+  <i class="material-icons">sentiment_very_satisfied</i>
+</div>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
+
+
