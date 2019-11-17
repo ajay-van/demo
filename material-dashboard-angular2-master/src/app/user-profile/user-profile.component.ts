@@ -35,6 +35,7 @@ this.inquiryService.saveInquiry(this.formGroup.getRawValue()).subscribe(
     }
   },
   err=>{
+  
   console.log(err);
 })
 }else{
